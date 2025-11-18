@@ -1,4 +1,4 @@
-# BIBLIOTHÈQUE FONDAMENTALE CARRIÈRE v3.0 - TALENTXPERT
+# BIBLIOTHÈQUE FONDAMENTALE CARRIÈRE v3.1 - TALENTXPERT
 
 ## [CORE] Protocoles & Modèles Mentaux
 
@@ -71,10 +71,11 @@ Imaginer l'échec pour lister toutes les causes possibles de cet échec.
 
 | Outil | Junior/Étudiant | Professionnel Confirmé | Cadre/Dirigeant |
 | :--- | :--- | :--- | :--- |
-| **CV (`/cv`)** | Sobre, ATS-friendly, Focus : Projets, Compétences Transférables, Formation. | Focus : Quantification des résultats (chiffres !), Leadership opérationnel, Impact mesurable. | Focus : Storytelling stratégique, Impact organisationnel, Vision de transformation. |
-| **Lettres (`/lm`)** | Utilisation du modèle AIDA (Attention, Intérêt, Désir, Action) pour la réponse à annonce. | Focus sur le Problème à Résoudre pour l'employeur (Modèle Solution-Problème). | Focus sur le Changement de Paradigme ou la Vision stratégique apportée. |
-| **Simulation (`/simu`)** | 5 questions basiques + feedback sur la Confiance et la clarté. | 10 questions ciblées (Techniques + Comportementales STAR) + feedback sur la Clarté du Rebond. | Cas pratiques complexes, Test de Résilience (Challenge de vision) + conseil Board. |
-| **Pitch (`/pitch`)** | 60 secondes : Qui je suis + Ce que je cherche + Ce que j'apporte. | 90 secondes : Problème résolu + Résultats + Valeur ajoutée unique. | 120 secondes : Vision + Transformation + Impact stratégique démontré. |
+| **CV (`/cv`)** | Sobre, ATS-friendly, Focus : Projets, Compétences Transférables, Formation.<br>**✨ v3.1 :** Mots-clés ATS adaptés à SECTOR, barres de progression visuelles, score ATS détaillé. | Focus : Quantification des résultats (chiffres !), Leadership opérationnel, Impact mesurable.<br>**✨ v3.1 :** Templates sectoriels (SECTOR), analyse granulaire ATS 5 critères, suggestions contextuelles. | Focus : Storytelling stratégique, Impact organisationnel, Vision de transformation.<br>**✨ v3.1 :** Adaptation automatique selon SECTOR/TARGET_ROLE, optimisation mots-clés sectoriels. |
+| **Lettres (`/lm`)** | Utilisation du modèle AIDA (Attention, Intérêt, Désir, Action) pour la réponse à annonce.<br>**✨ v3.1 :** Personnalisation selon SECTOR et TARGET_ROLE. | Focus sur le Problème à Résoudre pour l'employeur (Modèle Solution-Problème).<br>**✨ v3.1 :** Exemples sectoriels contextualisés. | Focus sur le Changement de Paradigme ou la Vision stratégique apportée.<br>**✨ v3.1 :** Adaptation culturelle avancée. |
+| **Simulation (`/simu`)** | 5 questions basiques + feedback sur la Confiance et la clarté.<br>**✨ v3.1 :** Système de sauvegarde automatique (checkpoints). | 10 questions ciblées (Techniques + Comportementales STAR) + feedback sur la Clarté du Rebond.<br>**✨ v3.1 :** Historique de progression, sauvegarde auto. | Cas pratiques complexes, Test de Résilience (Challenge de vision) + conseil Board.<br>**✨ v3.1 :** Sauvegarde automatique après chaque bloc. |
+| **Pitch (`/pitch`)** | 60 secondes : Qui je suis + Ce que je cherche + Ce que j'apporte.<br>**✨ v3.1 :** Quick Win `/quick elevator` (30s). | 90 secondes : Problème résolu + Résultats + Valeur ajoutée unique.<br>**✨ v3.1 :** Sauvegarde automatique après collecte. | 120 secondes : Vision + Transformation + Impact stratégique démontré.<br>**✨ v3.1 :** Checkpoints automatiques. |
+| **Tracker (`/tracker`)** | Progression simple avec KPIs de base.<br>**✨ v3.1 :** Graphique temporel Mermaid, comparaison benchmark, affichage SECTOR/TARGET_ROLE. | Suivi détaillé avec recommandations.<br>**✨ v3.1 :** Analyse IA du rythme, projection objectifs, comparaison Top 10%. | Dashboard stratégique complet.<br>**✨ v3.1 :** Benchmark avancé, visualisation progression temporelle, analyse comparative. |
 
 ### 6. Exemples Avant/Après par Outil
 
@@ -122,9 +123,9 @@ Imaginer l'échec pour lister toutes les causes possibles de cet échec.
 | Mensonge sur les dates | ❌ | ❌ | ❌ | Vérifiable en 2 clics (LinkedIn) |
 | "Références sur demande" | ⚠️ OK | ❌ Préparer 2-3 refs | ❌ Liste immédiate | Frein au processus |
 
-### 8. Tracking de Progression (KPIs)
+### 8. Tracking de Progression (KPIs) - ✨ Amélioré v3.1
 
-La commande `/tracker` affiche l'état actuel des KPIs de l'utilisateur.
+La commande `/tracker` affiche l'état actuel des KPIs de l'utilisateur avec **visualisation graphique** et **comparaison benchmark**.
 
 | KPI Cible | Junior | Confirmé | Dirigeant | Critères de Validation (Score 0-100) |
 | :--- | :--- | :--- | :--- | :--- |
@@ -135,10 +136,42 @@ La commande `/tracker` affiche l'état actuel des KPIs de l'utilisateur.
 | **Marché** | 3 secteurs identifiés | Positionnement IA-Proof défini | Stratégie de différenciation validée | Analyse écrite + plan d'action (75+) |
 
 **Système de Scoring :**
-- **0-50** : Non démarré ou incomplet
-- **51-74** : En cours, nécessite ajustements
-- **75-89** : Bon niveau, optimisable
-- **90-100** : Excellence, validé pour exécution
+- **0-50** : Non démarré ou incomplet (🔴)
+- **51-74** : En cours, nécessite ajustements (🟡)
+- **75-89** : Bon niveau, optimisable (🟢)
+- **90-100** : Excellence, validé pour exécution (⭐)
+
+**✨ Nouveautés v3.1 :**
+
+**Affichage étendu :**
+- 🏢 **SECTOR** : Secteur d'activité principal affiché
+- 🎯 **TARGET_ROLE** : Rôle cible recherché affiché
+- 📈 **Graphique de progression temporelle** : Visualisation Mermaid de l'évolution sur 7 jours
+- 🏆 **Comparaison Benchmark** : Comparaison avec médiane et Top 10% de votre catégorie
+
+**Analyse IA du rythme :**
+```
+📊 Analyse IA de votre rythme :
+• Progression : +[X] points en [N] jours (+[X]% vs moyenne)
+• Rythme actuel : +[X] pts/jour
+• Projection : Objectif 85 atteint le [Date estimée]
+```
+
+**Comparaison Benchmark :**
+```
+🏆 COMPARAISON BENCHMARK
+Votre Niveau : [USER_LEVEL]
+
+| KPI | Votre Score | Médiane | Top 10% |
+|-----|-------------|---------|---------|
+| Stratégie | 68 | 55 | 85 |
+| Livrables | 72 | 62 | 90 |
+
+📈 Vous êtes dans le Top [X]% de votre catégorie !
+
+💡 Pour entrer dans le Top 10% :
+1. [KPI à améliorer] (+[X] points) : [Action spécifique]
+```
 
 ---
 
@@ -291,18 +324,18 @@ Permet de charger une session précédente :
 
 ---
 
-## [RÉFÉRENCE RAPIDE] Commandes Condensées
+## [RÉFÉRENCE RAPIDE] Commandes Condensées - ✨ Étendu v3.1
 
 | Commande | Usage | Output |
 | :--- | :--- | :--- |
 | `!ingest_level` | Définir votre niveau | Calibration du système |
-| `/cv` | CV adapté | CV optimisé selon niveau |
+| `/cv` | CV adapté | CV optimisé selon niveau (avec barres progression v3.1) |
 | `/lm [type]` | Lettre/Mail | Génération ciblée (4 types) |
-| `/simu` | Simulation entretien | Questions + Feedback |
+| `/simu` | Simulation entretien | Questions + Feedback (avec sauvegarde auto v3.1) |
 | `/pitch [durée]` | Construction pitch | 30s / 60s / 120s |
 | `/audit` | Audit carrière | Ikigai + Compétences IA-Proof |
-| `/tracker` | Suivi progression | Tableau de bord KPIs |
-| `/quick [besoin]` | Quick Win | Solution express 5 min |
+| `/tracker` | Suivi progression | Tableau de bord KPIs (graphique + benchmark v3.1) |
+| `/quick [besoin]` | Quick Win | **12 commandes** express 5 min (✨ v3.1) |
 | `!pm` | Pré-mortem | Anticiper l'échec |
 | `!inv` | Inversion | "Comment échouer ?" |
 | `!s2` | Second ordre | Conséquences indirectes |
@@ -311,8 +344,67 @@ Permet de charger une session précédente :
 | `/export` | Sauvegarder session | Fichier Markdown complet |
 | `/import` | Restaurer session | Reprise où vous étiez |
 
+**✨ Quick Wins v3.1 - 12 Commandes Disponibles :**
+
+| Commande | Livrable | Temps | Cas d'Usage |
+|----------|----------|-------|-------------|
+| `/quick cv` | Structure CV minimal | 3 min | Candidature urgente sous 24h |
+| `/quick pitch` | Pitch 60s | 2 min | Networking event ce soir |
+| `/quick lettre` | Template lettre | 4 min | Réponse annonce rapide |
+| `/quick nego` | 5 arguments négociation | 3 min | Entretien RH demain |
+| `/quick linkedin` | 3 optimisations profil | 4 min | Recruteur consulte votre profil |
+| **`/quick relance`** ✨ | Mail de relance | 2 min | Relancer après entretien (J+3) |
+| **`/quick objection`** ✨ | Réponses 5 objections | 3 min | Préparer les pièges d'entretien |
+| **`/quick salaire`** ✨ | Calculateur fourchette | 2 min | Avant négociation (avec SECTOR) |
+| **`/quick questions`** ✨ | 10 questions recruteur | 2 min | Fin d'entretien |
+| **`/quick elevator`** ✨ | Pitch 30s éclair | 90 sec | Rencontre fortuite |
+| **`/quick resign`** ✨ | Lettre démission pro | 3 min | Quitter positivement |
+| **`/quick onboard`** ✨ | Plan 30/60/90 jours | 4 min | Nouveau poste dans 1 semaine |
+
 ---
 
-**Version :** 3.0 - Bibliothèque Fondamentale Complète
-**Dernière mise à jour :** Octobre 2025
+## [SÉCURITÉ] Protection des Données - ✨ Nouveau v3.1
+
+### Détection Automatique de Données Sensibles (RGPD)
+
+**Objectif :** Protéger l'utilisateur contre la divulgation accidentelle de données personnelles sensibles.
+
+**Déclenchement :** Scan automatique lors de la création de CV, lettres, ou tout livrable final.
+
+**Types de Données Détectées :**
+
+| Type | Exemples | Risque | Action |
+|------|----------|--------|--------|
+| **Identification Nationale** | N° Sécu, Passeport, CNI | Usurpation identité | ❌ Suppression recommandée |
+| **Données Médicales** | Informations santé, handicaps | Discrimination | ⚠️ Uniquement si RQTH pertinent |
+| **Données Financières** | N° CB, RIB/IBAN | Fraude | ❌ Suppression obligatoire |
+| **Adresse Complète** | N° rue + nom rue | Géolocalisation | ⚠️ Remplacer par Ville + CP |
+| **Date Naissance Complète** | JJ/MM/AAAA | Discrimination âge | ⚠️ Remplacer par année seule |
+
+**Protocole d'Alerte :**
+```
+⚠️ ALERTE DONNÉES SENSIBLES DÉTECTÉES
+
+🔒 J'ai détecté dans votre CV :
+• Numéro de sécurité sociale
+• Date de naissance complète
+
+📋 Recommandations RGPD :
+1. Ne jamais inclure de N° Sécu dans un CV
+2. Année de naissance suffit (pas date complète)
+
+✅ Voulez-vous que je nettoie automatiquement ? [OUI/NON]
+```
+
+**Nettoyage Intelligent :**
+- Date complète `15/03/1990` → Année `1990`
+- Adresse `123 Rue de la Paix, 75001 Paris` → `Paris 75001`
+- N° Sécurité Sociale → **Supprimé**
+
+**Conformité :** 100% RGPD ✅
+
+---
+
+**Version :** 3.1 - Bibliothèque Fondamentale Complète
+**Dernière mise à jour :** 18 Novembre 2025
 **Statut :** Production Ready ✅
