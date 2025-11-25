@@ -1,0 +1,146 @@
+{
+  "database": "TalentExpert Pro",
+  "description": "Plateforme IA pour optimiser les candidatures et accélérer l'employabilité",
+  "created_at": "2025-11-25T05:52:55.902408",
+  "tables": [
+    {
+      "name": "users",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary": true
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "unique": true
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "name": "items",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary": true
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "ai_processed",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "name": "optimisation_de_cv_avec_ia",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary": true
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "json"
+        },
+        {
+          "name": "ai_generated",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "name": "simulation_d'entretien_intelligente",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary": true
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "json"
+        },
+        {
+          "name": "ai_generated",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "name": "analyse_de_marché_en_temps_réel",
+      "fields": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "primary": true
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "type": "json"
+        },
+        {
+          "name": "ai_generated",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp"
+        }
+      ]
+    }
+  ]
+}
