@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SaaS Builder - Créez votre Micro-SaaS en 27 minutes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .features-input {
+            margin-bottom: 15px;
+        }
+
+        .features-input input {
+            margin-bottom: 10px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .radio-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .radio-option input[type="radio"] {
+            display: none;
+        }
+
+        .radio-label {
+            display: block;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-label {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .radio-label:hover {
+            border-color: #667eea;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+        }
+
+        .result-container.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .result-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .generated-files {
+            text-align: left;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .file-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .example-hint {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AI SaaS Builder</h1>
+        <p class="subtitle">Créez votre Micro-SaaS fonctionnel en quelques minutes</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="question-container active" id="question1">
+            <div class="question">
+                <span class="question-number">1</span>
+                Quel est le nom de ton Micro-SaaS ?
+            </div>
+            <input type="text" id="saasName" placeholder="Ex: TalentTracker, LeadGen Pro, ContentWizard...">
+            <p class="example-hint">💡 Choisissez un nom court et mémorable</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-container" id="question2">
+            <div class="question">
+                <span class="question-number">2</span>
+                Quelle est sa description en quelques lignes ?
+            </div>
+            <textarea id="saasDescription" placeholder="Décrivez en 2-3 phrases ce que fait votre Micro-SaaS et le problème qu'il résout..."></textarea>
+            <p class="example-hint">💡 Soyez clair sur la valeur apportée à vos utilisateurs</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-container" id="question3">
+            <div class="question">
+                <span class="question-number">3</span>
+                Quelles sont les 3 fonctionnalités principales ?
+            </div>
+            <div class="features-input">
+                <input type="text" id="feature1" placeholder="Fonctionnalité 1">
+                <input type="text" id="feature2" placeholder="Fonctionnalité 2">
+                <input type="text" id="feature3" placeholder="Fonctionnalité 3">
+            </div>
+            <p class="example-hint">💡 Les fonctionnalités qui rendent votre SaaS unique</p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-container" id="question4">
+            <div class="question">
+                <span class="question-number">4</span>
+                As-tu besoin d'un système d'authentification utilisateur ?
+            </div>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="authYes" name="auth" value="yes">
+                    <label for="authYes" class="radio-label">✅ Oui</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="authNo" name="auth" value="no">
+                    <label for="authNo" class="radio-label">❌ Non</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <h3>Génération de votre Micro-SaaS en cours...</h3>
+            <p>Création de la base de données, automatisations IA et interface utilisateur...</p>
+        </div>
+
+        <!-- Result -->
+        <div class="result-container" id="result">
+            <div class="success-icon">🎉</div>
+            <h2 class="result-title">Votre Micro-SaaS est prêt !</h2>
+            <p>Voici les fichiers générés automatiquement :</p>
+
+            <div class="generated-files" id="generatedFiles">
+                <!-- Les fichiers seront ajoutés dynamiquement -->
+            </div>
+
+            <button class="btn-primary" onclick="downloadAll()">📥 Télécharger tous les fichiers</button>
+            <button class="btn-secondary" onclick="restart()" style="margin-top: 10px;">🔄 Créer un nouveau SaaS</button>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group" id="navigationButtons">
+            <button class="btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;">← Précédent</button>
+            <button class="btn-primary" id="nextBtn" onclick="nextQuestion()">Suivant →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 4;
+        let saasData = {};
+
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function showQuestion(questionNum) {
+            // Hide all questions
+            document.querySelectorAll('.question-container').forEach(q => {
+                q.classList.remove('active');
+            });
+
+            // Show current question
+            document.getElementById('question' + questionNum).classList.add('active');
+
+            // Update buttons
+            document.getElementById('prevBtn').style.display = questionNum > 1 ? 'block' : 'none';
+
+            if (questionNum === totalQuestions) {
+                document.getElementById('nextBtn').textContent = '🚀 Générer mon SaaS';
+            } else {
+                document.getElementById('nextBtn').textContent = 'Suivant →';
+            }
+
+            updateProgress();
+        }
+
+        function validateCurrentQuestion() {
+            switch(currentQuestion) {
+                case 1:
+                    const name = document.getElementById('saasName').value.trim();
+                    if (!name) {
+                        alert('Veuillez entrer un nom pour votre Micro-SaaS');
+                        return false;
+                    }
+                    saasData.name = name;
+                    break;
+
+                case 2:
+                    const description = document.getElementById('saasDescription').value.trim();
+                    if (!description) {
+                        alert('Veuillez entrer une description pour votre Micro-SaaS');
+                        return false;
+                    }
+                    saasData.description = description;
+                    break;
+
+                case 3:
+                    const f1 = document.getElementById('feature1').value.trim();
+                    const f2 = document.getElementById('feature2').value.trim();
+                    const f3 = document.getElementById('feature3').value.trim();
+
+                    if (!f1 || !f2 || !f3) {
+                        alert('Veuillez remplir les 3 fonctionnalités principales');
+                        return false;
+                    }
+                    saasData.features = [f1, f2, f3];
+                    break;
+
+                case 4:
+                    const auth = document.querySelector('input[name="auth"]:checked');
+                    if (!auth) {
+                        alert('Veuillez choisir si vous avez besoin d\'authentification');
+                        return false;
+                    }
+                    saasData.auth = auth.value === 'yes';
+                    break;
+            }
+            return true;
+        }
+
+        function nextQuestion() {
+            if (!validateCurrentQuestion()) {
+                return;
+            }
+
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                // Generate the SaaS
+                generateSaaS();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        function generateSaaS() {
+            // Hide questions and buttons
+            document.querySelectorAll('.question-container').forEach(q => {
+                q.classList.remove('active');
+            });
+            document.getElementById('navigationButtons').style.display = 'none';
+
+            // Show loading
+            document.getElementById('loading').classList.add('active');
+
+            // Simulate generation (in real app, this would call your backend)
+            setTimeout(() => {
+                document.getElementById('loading').classList.remove('active');
+                displayResults();
+            }, 3000);
+        }
+
+        function displayResults() {
+            const filesContainer = document.getElementById('generatedFiles');
+
+            const files = [
+                { name: 'database-schema.json', icon: '📊', desc: 'Schéma de base de données Airtable/Supabase' },
+                { name: 'app.tsx', icon: '⚛️', desc: 'Application React principale' },
+                { name: 'api-routes.ts', icon: '🔌', desc: 'Routes API avec automatisations IA' },
+                { name: 'auth-system.ts', icon: '🔐', desc: saasData.auth ? 'Système d\'authentification complet' : 'Non généré' },
+                { name: 'ui-components.tsx', icon: '🎨', desc: 'Composants d\'interface utilisateur' },
+                { name: 'openai-integration.ts', icon: '🤖', desc: 'Intégration OpenAI pour automatisations' },
+                { name: 'README.md', icon: '📖', desc: 'Documentation de déploiement' }
+            ];
+
+            filesContainer.innerHTML = '';
+            files.forEach(file => {
+                if (file.name === 'auth-system.ts' && !saasData.auth) {
+                    return; // Skip auth file if not needed
+                }
+
+                const fileDiv = document.createElement('div');
+                fileDiv.className = 'file-item';
+                fileDiv.innerHTML = `
+                    <span class="file-icon">${file.icon}</span>
+                    <div style="flex: 1;">
+                        <strong>${file.name}</strong><br>
+                        <small style="color: #666;">${file.desc}</small>
+                    </div>
+                `;
+                filesContainer.appendChild(fileDiv);
+            });
+
+            document.getElementById('result').classList.add('active');
+        }
+
+        function downloadAll() {
+            // This would trigger the actual file download in a real implementation
+            alert('Génération et téléchargement des fichiers...\n\nDans la version complète, tous les fichiers de code seraient générés et téléchargés automatiquement !');
+
+            // Store the data
+            console.log('SaaS Data:', saasData);
+
+            // In real implementation, this would call the backend generator
+            generateActualCode();
+        }
+
+        function restart() {
+            currentQuestion = 1;
+            saasData = {};
+
+            // Clear inputs
+            document.getElementById('saasName').value = '';
+            document.getElementById('saasDescription').value = '';
+            document.getElementById('feature1').value = '';
+            document.getElementById('feature2').value = '';
+            document.getElementById('feature3').value = '';
+            document.querySelectorAll('input[name="auth"]').forEach(r => r.checked = false);
+
+            // Reset UI
+            document.getElementById('result').classList.remove('active');
+            document.getElementById('navigationButtons').style.display = 'flex';
+            showQuestion(1);
+        }
+
+        function generateActualCode() {
+            // This function would be implemented to actually generate the code files
+            // For now, we'll create a simple example
+            const codeGenerator = new SaaSCodeGenerator(saasData);
+            codeGenerator.generateAll();
+        }
+
+        // Code Generator Class
+        class SaaSCodeGenerator {
+            constructor(data) {
+                this.data = data;
+            }
+
+            generateAll() {
+                console.log('Generating code for:', this.data);
+                // This would generate actual code files
+                // We'll implement this in the Python backend
+            }
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

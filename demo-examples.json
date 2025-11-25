@@ -1,0 +1,148 @@
+{
+  "examples": [
+    {
+      "name": "TalentExpert Pro",
+      "description": "Plateforme IA pour optimiser les candidatures et accélérer l'employabilité des professionnels",
+      "features": [
+        "Optimisation de CV avec IA GPT-4",
+        "Simulation d'entretien intelligente avec feedback",
+        "Analyse de marché en temps réel"
+      ],
+      "auth": true,
+      "use_case": "RH & Recrutement",
+      "target": "Chercheurs d'emploi, Juniors, Confirmés"
+    },
+    {
+      "name": "ContentWizard",
+      "description": "Générez du contenu marketing de qualité en quelques secondes grâce à l'IA",
+      "features": [
+        "Génération d'articles de blog SEO-optimisés",
+        "Création de posts pour réseaux sociaux",
+        "Templates d'email marketing personnalisés"
+      ],
+      "auth": true,
+      "use_case": "Marketing Digital",
+      "target": "Marketeurs, Entrepreneurs, Agences"
+    },
+    {
+      "name": "LeadScoreAI",
+      "description": "Scorez et qualifiez vos leads automatiquement avec l'intelligence artificielle",
+      "features": [
+        "Scoring automatique des leads basé sur l'IA",
+        "Enrichissement de données en temps réel",
+        "Prédiction de taux de conversion"
+      ],
+      "auth": true,
+      "use_case": "Sales & CRM",
+      "target": "Équipes commerciales, Sales managers"
+    },
+    {
+      "name": "CodeReviewBot",
+      "description": "Assistant IA pour la revue de code et détection de bugs automatique",
+      "features": [
+        "Revue automatique de pull requests",
+        "Détection de bugs et vulnérabilités",
+        "Suggestions d'optimisation de code"
+      ],
+      "auth": true,
+      "use_case": "Développement logiciel",
+      "target": "Développeurs, Tech leads, CTO"
+    },
+    {
+      "name": "CustomerSupportAI",
+      "description": "Automatisez votre support client avec des réponses intelligentes générées par IA",
+      "features": [
+        "Réponses automatiques aux questions fréquentes",
+        "Analyse de sentiment des tickets",
+        "Priorisation intelligente des demandes"
+      ],
+      "auth": true,
+      "use_case": "Service client",
+      "target": "Équipes support, Customer success"
+    },
+    {
+      "name": "DataInsightPro",
+      "description": "Transformez vos données en insights actionnables grâce à l'IA",
+      "features": [
+        "Analyse automatique de datasets",
+        "Génération de rapports visuels",
+        "Détection d'anomalies et tendances"
+      ],
+      "auth": true,
+      "use_case": "Data Analytics",
+      "target": "Data analysts, Business analysts, Managers"
+    },
+    {
+      "name": "TranslateFlow",
+      "description": "Traduction professionnelle multilingue avec contexte métier",
+      "features": [
+        "Traduction contextualisée en 50+ langues",
+        "Glossaire personnalisé par industrie",
+        "Vérification de cohérence terminologique"
+      ],
+      "auth": false,
+      "use_case": "Traduction & Localisation",
+      "target": "Entreprises internationales, Traducteurs"
+    },
+    {
+      "name": "PitchDeckAI",
+      "description": "Créez des pitch decks professionnels en quelques minutes avec l'IA",
+      "features": [
+        "Génération de slides à partir d'une description",
+        "Optimisation du storytelling",
+        "Templates adaptés par industrie"
+      ],
+      "auth": true,
+      "use_case": "Fundraising & Présentation",
+      "target": "Startups, Entrepreneurs, Business developers"
+    },
+    {
+      "name": "SocialListenAI",
+      "description": "Surveillez et analysez les mentions de votre marque sur les réseaux sociaux",
+      "features": [
+        "Surveillance en temps réel des mentions",
+        "Analyse de sentiment et tonalité",
+        "Alertes automatiques sur les crises"
+      ],
+      "auth": true,
+      "use_case": "Social Media Management",
+      "target": "Community managers, Brand managers"
+    },
+    {
+      "name": "RecipeGenius",
+      "description": "Générez des recettes personnalisées basées sur vos ingrédients et préférences",
+      "features": [
+        "Création de recettes à partir d'ingrédients",
+        "Adaptation aux régimes alimentaires",
+        "Calcul nutritionnel automatique"
+      ],
+      "auth": false,
+      "use_case": "Food & Cuisine",
+      "target": "Particuliers, Cuisiniers, Nutritionnistes"
+    }
+  ],
+  "statistics": {
+    "total_examples": 10,
+    "with_auth": 8,
+    "without_auth": 2,
+    "categories": [
+      "RH & Recrutement",
+      "Marketing Digital",
+      "Sales & CRM",
+      "Développement logiciel",
+      "Service client",
+      "Data Analytics",
+      "Traduction",
+      "Fundraising",
+      "Social Media",
+      "Food & Cuisine"
+    ]
+  },
+  "tips": [
+    "Choisissez un nom court et mémorable (2-3 mots max)",
+    "Décrivez clairement le problème résolu, pas seulement les features",
+    "Limitez-vous à 3 fonctionnalités pour rester focalisé (Micro-SaaS)",
+    "L'authentification est recommandée si vous gérez des données utilisateur",
+    "Pensez 'niche' : mieux vaut résoudre UN problème pour UNE audience précise"
+  ]
+}
